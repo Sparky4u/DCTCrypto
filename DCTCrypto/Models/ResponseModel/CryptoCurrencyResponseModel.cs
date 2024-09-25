@@ -2,7 +2,7 @@
 
 namespace DCTCrypto.Models.ResponseModel
 {
-    public class CryptoCurrencyResponseModel : IHaveId
+    public class CryptoCurrencyResponseModel : IHaveId,IResponseModel
     {
         public string Id { get; set; }
         public string Rank { get; set; }
