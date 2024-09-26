@@ -1,13 +1,6 @@
-﻿using System.Text;
+﻿using DCTCrypto.DataStorage;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using DCTCrypto.Pages.MainPage;
 
 namespace DCTCrypto
 {
@@ -16,9 +9,10 @@ namespace DCTCrypto
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(IDataStorage dataStorage)
         {
             InitializeComponent();
+            MainFrame.NavigationService.Navigate(new MainPageView(dataStorage, MainFrame.NavigationService));
         }
     }
 }

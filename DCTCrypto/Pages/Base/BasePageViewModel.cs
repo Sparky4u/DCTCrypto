@@ -1,10 +1,11 @@
 ﻿using Prism.Commands;
+using Prism.Navigation;
 using System.Windows.Input;
 using System.Windows.Navigation;
 
 namespace DCTCrypto.Pages.Base
 {
-    public class BasePageViewModel
+    public abstract class BasePageViewModel
     {
         private readonly NavigationService _navigationService;
         private ICommand _goBackCommand;
@@ -18,8 +19,8 @@ namespace DCTCrypto.Pages.Base
 
         private void ExecuteGoBackCommand()
         {
-            if(_navigationService.CanGoBack)
+            if (_navigationService.CanGoBack)
                 _navigationService.GoBack();
-        }          
+        }
     }
 }
